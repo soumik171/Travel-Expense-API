@@ -116,6 +116,7 @@
     <Compile Include="DTOs\ExpenseCategoryDTO.cs" />
     <Compile Include="DTOs\ExpenseDetailsDTO.cs" />
     <Compile Include="DTOs\ExpenseDTO.cs" />
+    <Compile Include="DTOs\NotificationDTO.cs" />
     <Compile Include="DTOs\RefundDetailsDTO.cs" />
     <Compile Include="DTOs\RefundDTO.cs" />
     <Compile Include="DTOs\TripDetailsDTO.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Services\ApprovalService.cs" />
     <Compile Include="Services\ExpenseCategoryService.cs" />
     <Compile Include="Services\ExpenseService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\RefundService.cs" />
     <Compile Include="Services\TripService.cs" />
     <Compile Include="Services\UserService.cs" />

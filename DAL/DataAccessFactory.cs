@@ -4,10 +4,11 @@ using DAL.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL 
 {
     public class DataAccessFactory
     {
@@ -54,5 +55,11 @@ namespace DAL
         {
             return new RefundRepo();
         }
+
+        public static IRepoG<Notification,int, bool>NotificationData()
+        {
+            return new NotificationRepo();
+        }
+
     }
 }

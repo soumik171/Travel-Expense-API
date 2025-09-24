@@ -38,6 +38,11 @@ namespace BLL.Mapping
                 // Refund
                 cfg.CreateMap<Refund, RefundDTO>().ReverseMap();
                 cfg.CreateMap<Refund, RefundDetailsDTO>().ReverseMap();
+
+                // Notification
+                cfg.CreateMap<Notification, NotificationDTO>();
+                cfg.CreateMap<NotificationDTO, Notification>();
+
             });
 
             return new Mapper(config);

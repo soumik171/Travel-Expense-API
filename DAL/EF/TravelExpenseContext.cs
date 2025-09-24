@@ -16,6 +16,7 @@ namespace DAL.EF
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Approval> Approvals { get; set; }
         public DbSet<Refund> Refunds { get; set; }
-        
+        public DbSet<Notification> Notifications { get; set; }
+
     }
 }

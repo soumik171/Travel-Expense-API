@@ -30,7 +30,14 @@ namespace BLL.Services
         public bool Create(UserDTO userDto)
         {
             var data = mapper.Map<User>(userDto);
-            return DataAccessFactory.UserData().Create(data);
+            var created = DataAccessFactory.UserData().Create(data);
+
+            // If successfully creates data, it stored in the notification table
+            if (created)
+            {
+                NotificationService.Create($"{userDto.FullName} is added. ");
+            }
+            return created;
         }
 
         public bool Update(UserDTO userDto)
@@ -43,6 +50,7 @@ namespace BLL.Services
         {
             return DataAccessFactory.UserData().Delete(id);
         }
+
     }
 }
 

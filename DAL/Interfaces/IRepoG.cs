@@ -9,7 +9,6 @@ namespace DAL.Repos
     public interface IRepoG<CLASS, ID, RET>
     {
         List<CLASS> Get();
-        //CLASS Get(ID id);
         RET Create(CLASS obj);
         RET Update(CLASS obj);
         bool Delete(ID id);
