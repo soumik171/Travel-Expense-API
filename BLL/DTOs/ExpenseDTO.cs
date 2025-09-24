@@ -10,11 +10,9 @@ namespace BLL.DTOs
     {
         public int ExpenseID { get; set; }
         public decimal Amount { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime ExpenseDate { get; set; }
         public int CategoryID { get; set; }
-        public string CategoryName { get; set; }
-
         public int UserID { get; set; }
-        public string UserName { get; set; }
+        public int TripID { get; set; }
     }
 }

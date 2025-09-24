@@ -21,25 +21,25 @@ namespace BLL.Services
             return mapper.Map<List<UserDTO>>(data);
         }
 
-        public static UserDetailsDTO Get(int id)
+        public UserDTO Get(int id)
         {
             var data = DataAccessFactory.UserDataId().UserId(id);
-            return mapper.Map<UserDetailsDTO>(data);
+            return mapper.Map<UserDTO>(data);
         }
 
-        public static bool Create(UserDetailsDTO userDto)
+        public bool Create(UserDTO userDto)
         {
             var data = mapper.Map<User>(userDto);
             return DataAccessFactory.UserData().Create(data);
         }
 
-        public static bool Update(UserDetailsDTO userDto)
+        public bool Update(UserDTO userDto)
         {
             var data = mapper.Map<User>(userDto);
             return DataAccessFactory.UserData().Update(data);
         }
 
-        public static bool Delete(int id)
+        public bool Delete(int id)
         {
             return DataAccessFactory.UserData().Delete(id);
         }

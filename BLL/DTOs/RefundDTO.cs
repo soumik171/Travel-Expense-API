@@ -9,9 +9,12 @@ namespace BLL.DTOs
     public class RefundDTO
     {
         public int RefundID { get; set; }
-        public decimal Amount { get; set; }
-        public DateTime RequestDate { get; set; }
-        public int UserID { get; set; }
-        public string UserName { get; set; }
+        public decimal RefundAmount { get; set; }
+        public DateTime RefundDate { get; set; }
+        public int ExpenseID { get; set; }
+        public string PaymentMethod { get; set; }="Credit Card";
+
+        public string Status { get; set; }="Pending";
+
     }
 }

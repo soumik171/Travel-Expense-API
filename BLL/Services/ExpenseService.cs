@@ -21,13 +21,20 @@ namespace BLL.Services
             return mapper.Map<List<ExpenseDTO>>(data);
         }
 
-        public static bool Create(ExpenseDetailsDTO expenseDto)
+        public static List<ExpenseDTO> GetByTrip(int tripId)
         {
+            var data = DataAccessFactory.ExpenseData().Get()
+                          .Where(e => e.TripID == tripId).ToList();
+            return mapper.Map<List<ExpenseDTO>>(data);
+        }
+
+        public static bool Create(ExpenseDTO expenseDto)
+        { 
             var data = mapper.Map<Expense>(expenseDto);
             return DataAccessFactory.ExpenseData().Create(data);
         }
 
-        public static bool Update(ExpenseDetailsDTO expenseDto)
+        public static bool Update(ExpenseDTO expenseDto)
         {
             var data = mapper.Map<Expense>(expenseDto);
             return DataAccessFactory.ExpenseData().Update(data);

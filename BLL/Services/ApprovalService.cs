@@ -21,13 +21,13 @@ namespace BLL.Services
             return mapper.Map<List<ApprovalDTO>>(data);
         }
 
-        public static bool Create(ApprovalDetailsDTO approvalDto)
+        public static bool Create(ApprovalDTO approvalDto)
         {
             var data = mapper.Map<Approval>(approvalDto);
             return DataAccessFactory.ApprovalData().Create(data);
         }
 
-        public static bool Update(ApprovalDetailsDTO approvalDto)
+        public static bool Update(ApprovalDTO approvalDto)
         {
             var data = mapper.Map<Approval>(approvalDto);
             return DataAccessFactory.ApprovalData().Update(data);

@@ -23,9 +23,9 @@ namespace APPLICATION.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public HttpResponseMessage Get(int id)
+        public HttpResponseMessage GetId(int id)
         {
-            var data = UserService.Get(id);
+            var data = new UserService().Get(id);
             if (data != null)
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
@@ -34,9 +34,9 @@ namespace APPLICATION.Controllers
 
         [HttpPost]
         [Route("create")]
-        public HttpResponseMessage Create([FromBody] UserDetailsDTO userDto)
+        public HttpResponseMessage Create(UserDTO userDto)
         {
-            var result = UserService.Create(userDto);
+            var result = new UserService().Create(userDto);
             if (result)
                 return Request.CreateResponse(HttpStatusCode.OK, "User Created Successfully");
 
@@ -45,9 +45,9 @@ namespace APPLICATION.Controllers
 
         [HttpPut]
         [Route("update")]
-        public HttpResponseMessage Update([FromBody] UserDetailsDTO userDto)
+        public HttpResponseMessage Update(UserDTO userDto)
         {
-            var result = UserService.Update(userDto);
+            var result = new UserService().Update(userDto);
             if (result)
                 return Request.CreateResponse(HttpStatusCode.OK, "User Updated Successfully");
 
@@ -58,7 +58,7 @@ namespace APPLICATION.Controllers
         [Route("delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
-            var result = UserService.Delete(id);
+            var result = new UserService().Delete(id);
             if (result)
                 return Request.CreateResponse(HttpStatusCode.OK, "User Deleted Successfully");
 

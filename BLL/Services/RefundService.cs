@@ -20,14 +20,18 @@ namespace BLL.Services
             var data = DataAccessFactory.RefundData().Get();
             return mapper.Map<List<RefundDTO>>(data);
         }
-
-        public static bool Create(RefundDetailsDTO refundDto)
+        public static RefundDTO Get(int id)
+        {
+            var data = DataAccessFactory.RefundDataId().RefundId(id);
+            return mapper.Map<RefundDTO>(data);
+        }
+        public static bool Create(RefundDTO refundDto)
         {
             var data = mapper.Map<Refund>(refundDto);
             return DataAccessFactory.RefundData().Create(data);
         }
 
-        public static bool Update(RefundDetailsDTO refundDto)
+        public static bool Update(RefundDTO refundDto)
         {
             var data = mapper.Map<Refund>(refundDto);
             return DataAccessFactory.RefundData().Update(data);

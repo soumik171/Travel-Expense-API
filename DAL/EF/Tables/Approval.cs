@@ -20,7 +20,7 @@ namespace DAL.EF.Tables
         public int? ApprovedBy { get; set; }   // UserID (Manager/Admin)
 
         [Column(TypeName = "varchar")]
-        public string ApprovalStatus { get; set; } // Pending, Approved, Rejected
+        public string ApprovalStatus { get; set; } = "Pending"; // Pending, Approved, Rejected
 
         [Column(TypeName = "varchar")]
         public string Comments { get; set; }

@@ -11,6 +11,11 @@ namespace DAL.Repos
     internal class ApprovalRepo : IRepoG<Approval, int, bool>
     {
         TravelExpenseContext db;
+        public ApprovalRepo()
+        {
+            db = new TravelExpenseContext();
+        }
+
         public List<Approval> Get()
         {
             return db.Approvals.ToList();

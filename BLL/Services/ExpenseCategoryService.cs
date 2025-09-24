@@ -21,13 +21,13 @@ namespace BLL.Services
             return mapper.Map<List<ExpenseCategoryDTO>>(data);
         }
 
-        public static bool Create(ExpenseCategoryDetailsDTO categoryDto)
+        public static bool Create(ExpenseCategoryDTO categoryDto)
         {
             var data = mapper.Map<ExpenseCategory>(categoryDto);
             return DataAccessFactory.ExpenseCategoryData().Create(data);
         }
 
-        public static bool Update(ExpenseCategoryDetailsDTO categoryDto)
+        public static bool Update(ExpenseCategoryDTO categoryDto)
         {
             var data = mapper.Map<ExpenseCategory>(categoryDto);
             return DataAccessFactory.ExpenseCategoryData().Update(data);

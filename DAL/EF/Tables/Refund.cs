@@ -20,7 +20,7 @@ namespace DAL.EF.Tables
         public DateTime RefundDate { get; set; }
 
         [Column(TypeName = "varchar")]
-        public string PaymentMethod { get; set; } // Bank Transfer, Cash, Mobile Banking
+        public string PaymentMethod { get; set; } // Bank Transfer, Cash, Mobile Banking, Credit Card
 
         [Column(TypeName = "varchar")]
         public string Status { get; set; } // Pending, Paid, Cancelled
