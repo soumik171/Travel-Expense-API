@@ -49,21 +49,21 @@ namespace BLL.Services
             return DataAccessFactory.TripData().Delete(id);
         }
 
-        // Recommendation method based on trip ID
-        //public static List<TripDTO> RecommendByTripId(int tripId)
-        //{
-        //    var baseTrip = GetId(tripId);   
-        //    if (baseTrip == null) return new List<TripDTO>();   // Get current trip
+        //Recommendation method based on trip ID
+        public static List<TripDTO> RecommendByTripId(int tripId)
+        {
+            var baseTrip = GetId(tripId);
+            if (baseTrip == null) return new List<TripDTO>();   // Get current trip
 
-        //    var allTrips = Get();   //Get all trips
+            var allTrips = Get();   //Get all trips
 
-        //    var recommendations = allTrips
-        //        .Where(t => t.TripID != tripId &&
-        //                    t.Destination == baseTrip.Destination)  //only the same destination
-        //        .ToList();
+            var recommendations = allTrips
+                .Where(t => t.TripID != tripId &&
+                            t.Destination == baseTrip.Destination)  //only the same destination
+                .ToList();
 
-        //    return recommendations;
-        //}
+            return recommendations;
+        }
 
         public static List<TripDTO> RecommendByDestination(string destination)
         {

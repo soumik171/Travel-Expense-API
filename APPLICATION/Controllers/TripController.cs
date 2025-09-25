@@ -73,15 +73,15 @@ namespace APPLICATION.Controllers
             return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Trip not found");
         }
 
-        //[HttpGet]
-        //[Route("{id}/recommend")]
-        //public HttpResponseMessage RecommendByTrip(int id)
-        //{
-        //    var data = TripService.RecommendByTripId(id);
-        //    if (data == null || !data.Any())
-        //        return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No recommendations found");
-        //    return Request.CreateResponse(HttpStatusCode.OK, data);
-        //}
+        [HttpGet]
+        [Route("{id}/recommend")]
+        public HttpResponseMessage RecommendByTrip(int id)
+        {
+            var data = TripService.RecommendByTripId(id);
+            if (data == null || !data.Any())
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No recommendations found");
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
 
         [HttpGet]
         [Route("recommend/destination/{destination}")]
